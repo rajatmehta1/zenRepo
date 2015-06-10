@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="mdm.common.view.*" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<fx:Script>
+
+		<![CDATA[
+			
+			import mx.collections.ArrayCollection;
+			
+			[Bindable]
+			
+			public var expenses:ArrayCollection = new ArrayCollection([
+				
+				{Expense:"default", Amount:1500},
+				
+				{Expense:"management", Amount:200}
+				
+			]);
+			
+			
+			
+			[Bindable]
+			
+			public var platform:ArrayCollection = new ArrayCollection([
+				
+				{Platform:"Android", Amount:1500},
+				
+				{Platform:"Iphone", Amount:1400},
+				
+				{Platform:"Unknown", Amount:3000}
+				
+			]);                                           
+			
+		]]>
+		
+	</fx:Script>
+	
+	<mx:HBox width="98%" paddingRight="3" horizontalAlign="center" height="48%">
+		
+		<view:pieChart id="deviceByPolicy" chartTitle="Devices by Policy" chartData="{expenses}" chartField="Amount" chartNameField="Expense" width="33%" height="100%"/>
+		
+		<view:pieChart id="deviceByPlatform" chartTitle="Devices by Platform" chartData="{platform}" chartField="Amount" chartNameField="Platform" width="33%" height="100%"/>
+		
+		<view:barChart id="deviceByAct" chartTitle="Device Activation/De-Activation History" width="34%" height="100%"/>
+		
+	</mx:HBox>
+	
+	
+	
+	<mx:HBox width="98%" paddingRight="3" horizontalAlign="center" height="48%">
+		
+		<view:pieChart id="deviceByCarrier" chartTitle="Devices by Carrier" chartData="{platform}" chartField="Amount" chartNameField="Carrier" width="33%" height="100%"/>
+		
+		<view:pieChart id="deviceByOwner" chartTitle="Devices by Ownership" chartData="{platform}" chartField="Amount" chartNameField="Ownership" width="33%" height="100%"/>
+		
+		<view:pieChart id="deviceByUsage" chartTitle="Text/Minutes Usage" width="34%" height="100%"/>
+		
+	</mx:HBox>
+	
+	
+	
+</mx:VBox>

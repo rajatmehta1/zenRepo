@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx">
+	
+	<fx:Declarations>                            
+		
+	</fx:Declarations>          
+	
+	<mx:Grid width="80%">
+		
+		<mx:GridRow>
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Device Name"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:TextInput id="deviceName" text="" width="100%"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		<mx:GridRow>
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Device Type"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:TextInput id="deviceType" text="" width="100%"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		
+		
+		<mx:GridRow>
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="OS"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:TextInput id="os" text="" width="100%"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		<mx:GridRow>
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Phone Number"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:TextInput id="phone" text="" width="100%"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		<mx:GridRow>
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="UserId (Link to Person using this device)"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:TextInput id="userid" text="" width="100%"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+	</mx:Grid>         
+	
+	
+	
+	
+	
+</mx:VBox>

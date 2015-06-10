@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   
+			   minWidth="955" minHeight="600" 
+			   
+			   xmlns:view="mdm.common.view.*" 
+			   
+			   xmlns:view1="mdm.apps.view.*" 
+			   
+			   xmlns:ria="http://ria.msflexlib.ms.com" 
+			   
+			   xmlns:view2="mdm.devices.view.*" 
+			   
+			   xmlns:view3="mdm.users.view.*" 
+			   
+			   xmlns:view4="mdm.dashboard.view.*" 
+			   
+			   xmlns:view5="mdm.enroll.view.*" creationComplete="registerEvents()">
+	
+	<fx:Script>
+
+		<![CDATA[
+			
+			import mdm.devices.events.ShowDeviceDetailEvent;
+			
+			
+			
+			import mx.controls.Alert;
+			
+			import mx.core.Container;
+			
+			
+			
+			public var lastOpenedChildContainer:Container = null;
+			
+			
+			
+			public function onSubmit():void {
+				
+				loginContainer.includeInLayout = false;
+				
+				loginContainer.visible = false;
+				
+				mainContentContainer.includeInLayout = true;
+				
+				mainContentContainer.visible = true;
+				
+			}
+			
+			
+			
+			public function updateOptions(cnt:Container):void {
+				
+				if(lastOpenedChildContainer != null) {
+					
+					lastOpenedChildContainer.includeInLayout = false;
+					
+					lastOpenedChildContainer.visible = false;
+					
+				}
+				
+				cnt.includeInLayout = true;
+				
+				cnt.visible = true;
+				
+				lastOpenedChildContainer = cnt;
+				
+			}
+			
+			
+			
+			public function showDeviceDetails(evt:ShowDeviceDetailEvent):void {
+				
+				Alert.show(" ------------> " + evt.deviceVO.deviceType);
+				
+				contentStack.selectedIndex = 5;
+				
+			}
+			
+			
+			
+			
+			
+			public function registerEvents():void {
+				
+				deviceListMain.addEventListener(ShowDeviceDetailEvent.EVENT_ACTION,showDeviceDetails);
+				
+			}
+			
+		]]>
+		
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	
+	<fx:Style>
+
+		Application {
+			
+			padding-top : 0;
+			
+		}
+		
+		.bgStyle{
+			
+			background-color: #ffffff;
+			
+		}
+		
+		.leftNavStyle {
+			
+			border-color: #ffffff;
+			
+			border-thickness : 1;
+			
+			corner-radius : 5;
+			
+			drop-shadow-enabled: true;
+			
+			horizontalAlign: center;
+			
+			fontFamily: Arial;
+			
+			fontSize: 15;
+			
+			color: #808080;                                                                  
+			
+		}
+		
+		.menuOptionStyle {
+			
+			paddingLeft: 2;
+			
+			paddingRight: 2;
+			
+			horizontalAlign: center;
+			
+			backgroundColor: #ffffff;
+			
+			vertical-align : middle;
+			
+			corner-radius : 7;
+			
+			padding-bottom : 0;
+			
+			padding-top: 10;
+			
+		}
+		
+		
+		
+		.menuOptionChoicesStyle {
+			
+			fontFamily: Arial;
+			
+			fontSize: 11;
+			
+			color: #356AA0;                                
+			
+			background-color : #ffffff;
+			
+			vertical-align : top;
+			
+			horizontal-align : center;
+			
+			border-sides : left,right,bottom;
+			
+			border-thickness : 4;
+			
+			border-color : #73880A;
+			
+			border-style : solid;
+			
+			padding-top : 0;
+			
+		}                              
+		
+		
+		
+	</fx:Style>
+	
+	<s:Scroller width="100%" height="100%">
+		
+		<s:Group>
+			
+			
+			
+			
+			
+			
+			
+			<mx:VBox width="100%" height="100%" styleName="bgStyle" verticalScrollPolicy="off">
+				
+				<view:topBar/> 
+				
+				<view:login id="loginContainer" includeInLayout="true" visible="true" height="100%" width="100%" SubmitEvent="onSubmit()"/>
+				
+				<mx:HBox id="mainContentContainer" width="100%" height="95%" paddingLeft="10" paddingRight="10" includeInLayout="false" visible="false">
+					
+					<mx:VBox id="leftNav" width="10%" height="100%" styleName="leftNavStyle">
+						
+						<mx:Spacer height="5"/>
+						
+						<mx:VBox id="homeID" width="100%" height="35" styleName="menuOptionStyle" mouseOver='homeID.setStyle("backgroundColor","#73880A");' mouseOut='homeID.setStyle("backgroundColor","#ebebeb");homeID.setStyle("fontColor","#808080");' click='contentStack.selectedIndex=0;homeID.setStyle("backgroundColor","#73880A")'>
+							
+							<mx:Label text="HOME"/>
+							
+						</mx:VBox>
+						
+						<mx:VBox id="appsID" width="100%" height="35" styleName="menuOptionStyle" mouseOver='appsID.setStyle("backgroundColor","#73880A")' mouseOut='appsID.setStyle("backgroundColor","#ebebeb")'>
+							
+							<mx:Label text="APPS"/>
+							
+						</mx:VBox>
+						
+						<mx:VBox id="usersID" width="100%" height="35" styleName="menuOptionStyle" mouseOver='usersID.setStyle("backgroundColor","#73880A")' mouseOut='usersID.setStyle("backgroundColor","#ebebeb")' click='contentStack.selectedIndex=2;usersID.setStyle("backgroundColor","#73880A");usersID.setStyle("color","white")'>
+							
+							<mx:Label text="USERS" includeInLayout="true" visible="true"/>
+							
+							<mx:VBox includeInLayout="false" visible="false">
+								
+								<mx:Label text="User List"/>
+								
+								<mx:Label text="Import"/>
+								
+							</mx:VBox>
+							
+						</mx:VBox>
+						
+						<mx:VBox id="devicesID" width="100%" height="35" styleName="menuOptionStyle" mouseOver='devicesID.setStyle("backgroundColor","#73880A")' mouseOut='if(contentStack.selectedIndex != 1) devicesID.setStyle("backgroundColor","#ebebeb")' click='devicesID.setStyle("backgroundColor","#73880A");updateOptions(devicesOptions);'>
+							
+							<mx:Label text="DEVICES"/>
+							
+						</mx:VBox>
+						
+						<mx:VBox id="devicesOptions" includeInLayout="false" visible="false" styleName="menuOptionChoicesStyle" width="100%">
+							
+							<mx:LinkButton label="Device Dashboard" click="contentStack.selectedIndex = 1"/>
+							
+							<mx:LinkButton label="Device List" click="contentStack.selectedIndex = 4"/>
+							
+							<mx:LinkButton label="Device Policy"/>
+							
+							<mx:LinkButton label="Device Details"/>
+							
+						</mx:VBox>                                                       
+						
+						<mx:VBox id="policyID" width="100%" height="35" styleName="menuOptionStyle" mouseOver='policyID.setStyle("backgroundColor","#73880A")' mouseOut='policyID.setStyle("backgroundColor","#ebebeb")'>
+							
+							<mx:Label text="POLICY"/>
+							
+						</mx:VBox>
+						
+						<mx:VBox id="settingsID" width="100%" height="35" styleName="menuOptionStyle" mouseOver='settingsID.setStyle("backgroundColor","#73880A")' mouseOut='settingsID.setStyle("backgroundColor","#ebebeb")' click="updateOptions(settingOptions);">
+							
+							<mx:Label text="SETTINGS"/>
+							
+						</mx:VBox>                                                       
+						
+						<mx:VBox id="settingOptions" includeInLayout="false" visible="false" styleName="menuOptionChoicesStyle" width="100%">
+							
+							<mx:LinkButton label="Enrollment" click="contentStack.selectedIndex = 3"/>
+							
+							<mx:LinkButton label="APNs Certificate"/>
+							
+							<mx:LinkButton label="Authentication"/>
+							
+							<mx:LinkButton label="Proxy Settings"/>
+							
+						</mx:VBox>                                                       
+						
+					</mx:VBox>
+					
+					<mx:HBox id="contentBody" width="90%" height="100%" horizontalAlign="center" verticalAlign="middle">
+						
+						<mx:ViewStack id="contentStack" width="95%" height="95%" paddingBottom="10">
+							
+							<view4:dashboardMain id="dashboardMain" width="100%" height="90%"/>
+							
+							<view2:deviceMain id="deviceMain" width="100%" height="100%"/>
+							
+							<view3:usersMain id="userMain" width="100%" height="100%"/>
+							
+							<view5:enrollMain id="enrollMain" width="100%" height="100%"/>
+							
+							<view2:deviceListMain id="deviceListMain" width="100%" height="100%"/>
+							
+							<view2:deviceDetailsMain id="deviceDetailsMain" width="100%" height="100%"/>
+							
+						</mx:ViewStack>                                                            
+						
+					</mx:HBox>
+					
+				</mx:HBox>
+				
+			</mx:VBox>
+			
+		</s:Group>
+		
+	</s:Scroller>                      
+	
+</s:Application>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="mdm.devices.view.*" xmlns:devicedetails="mdm.devices.view.devicedetails.*" paddingTop="10">
+	
+	<fx:Declarations>                            
+		
+	</fx:Declarations>
+	
+	
+	
+	<mx:HBox width="100%" horizontalAlign="left">
+		
+		<mx:Button id="devQry" label="Device Query"/>
+		
+		<mx:Button id="mesgBtn" label="Send Message"/>
+		
+		<mx:Button id="lockBtn" label="Lock Device"/>
+		
+		<mx:Button id="findBtn" label="Find Device"/>
+		
+		<mx:Button id="clearPasscodeBtn" label="Clear Passcode"/>
+		
+		<mx:Button id="wipeBtn" label="Device Wipe"/>
+		
+		<mx:Button id="enterpriseWipeBtn" label="Enterprise Wipe"/>
+		
+		<mx:Spacer width="10"/>
+		
+	</mx:HBox>
+	
+	<mx:Spacer height="20"/>
+	
+	<mx:TabNavigator id="deviceDetailTabs" width="100%" height="100%">
+		
+		<devicedetails:deviceDetailsTab1 id="deviceDetailsID" width="100%" height="100%" label="Device Details"/>                           
+		
+		<devicedetails:deviceAppsTab2 id="deviceAppsID" width="100%" height="100%" label="Applications"/>
+		
+		<devicedetails:deviceCertTab3 id="deviceCertID" width="100%" height="100%" label="Certificates"/>
+		
+		<devicedetails:deviceContentTab4 id="deviceContentID" width="100%" height="100%" label="Content"/>
+		
+		<devicedetails:deviceLocationTab5 id="deviceLocationID" width="100%" height="100%" label="Location"/>
+		
+		<devicedetails:deviceNetworkTab6 id="deviceNetworkID" width="100%" height="100%" label="Network"/>
+		
+		<devicedetails:deviceProfileTab7 id="deviceProfileID" width="100%" height="100%" label="Profile"/>
+		
+		<devicedetails:deviceRestrictionTab8 id="deviceRestrictionID" width="100%" height="100%" label="Restriction"/>
+		
+		<devicedetails:deviceSecurityTab9 id="deviceSecurityID" width="100%" height="100%" label="Security"/>
+		
+	</mx:TabNavigator>      
+	
+</mx:VBox>

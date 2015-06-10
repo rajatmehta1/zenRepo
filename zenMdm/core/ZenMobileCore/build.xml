@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<project name="zenmobile-core" default="all" basedir=".">    
+
+    <property file="build.properties"/>
+    
+    <property name="src.dir" value="${basedir}/src"/>   
+    <property name="lib.dir" value="${basedir}/lib"/>    
+    <property name="conf.dir" value="${basedir}/conf"/>
+    <property name="web.dir" value="${basedir}/WebContent"/> 
+    <property name="build.dir" value="${basedir}/build"/>    
+    <property name="dist.dir" value="${basedir}/dist"/>
+    <property name="unpkgd.dir" value="${basedir}/unpkgd"/>
+    <property name="deploy.dir" value="${basedir}/deployment"/>
+    <property name="doc.dir" value="${basedir}/doc"/>        
+    
+    
+    <!-- Default Ant Task -->
+    <target name="all" depends="clean,compile,build"/>
+    
+
+    <!-- Cleans the directories -->
+    <target name="clean" description="clean up" >
+        <echo message="Removing the classes and dist directories" />
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+        <delete dir="${unpkgd.dir}"/>
+        <delete dir="${doc.dir}"/>
+      </target>
+
+    <!-- Makes the dist and classes directories -->
+    <target name="init" depends="clean" description="Create the classes,init directories">    
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/classes"/>    
+        <mkdir dir="${dist.dir}" />
+        <mkdir dir="${unpkgd.dir}"/>
+        <mkdir dir="${doc.dir}" />
+        <mkdir dir="${doc.dir}/javadoc" />
+    </target>
+    
+    <!-- Compile the Java Source Code 
+         Note : Files in the lib folder are needed for compiling the code -->
+    <target name="compile.java" depends="init" description="Compile the code and store the class files in the build/classes folder">
+          <echo message="Starting to compile the classes" />
+          <javac srcdir="${src.dir}" destdir="${build.dir}/classes" debug="true" includes="**/*.java" >
+                <classpath>
+                  <fileset dir="${web.dir}/WEB-INF/lib">
+                    <include name="**/*.jar"/>          
+                  </fileset>
+            </classpath>
+          </javac>      
+    </target>    
+           
+        
+    
+    <target name="compile" depends="compile.java"/>
+    
+    <target name="build.exploded.war" depends="init" description="Build the exploded war file">
+        <echo message="Building the War file" />
+          <!-- Copying the xml/properties to the packages, if any -->
+          <copy todir="${build.dir}/classes">
+               <fileset dir="${src.dir}" includes="**/*.xml"/>
+               <fileset dir="${src.dir}" includes="**/*.properties"/>     
+          </copy>
+          <!-- Copying the web directory to dist folder -->
+          <copy todir="${unpkgd.dir}/${ant.project.name}">
+               <fileset dir="${web.dir}"/>
+          </copy>
+          <!-- Copying the classes -->        
+          <copy todir="${unpkgd.dir}/${ant.project.name}/WEB-INF/classes">
+             <fileset dir="${build.dir}/classes"/> 
+          </copy>                            
+    </target>    
+    
+    <target name="build" depends="build.exploded.war" description="Build the war file">
+        <echo message="Building the War file" />      
+        <jar jarfile="${dist.dir}/${ant.project.name}.war" basedir="${unpkgd.dir}/${ant.project.name}" />
+    </target>    
+    
+    
+    
+     
+    <!-- NOTE: For this task to run the javadoc.exe must be in the system path.
+         i.e put it in the PATH environment variable.Also it requires an eclipse restart.  -->
+    <target name="javadoc" description="Create JavaDoc">
+        <javadoc sourcepath="${src.dir}" packagenames="${pkg.name}" destdir="${doc.dir}\javadoc"  excludepackagenames="${pkg.name.exclude}"/>        
+    </target>
+
+    <!-- NOTE: To run this task you will have to provide your junit.jar e.g junit-3.8.1.jar 
+         in the ANT_HOME/lib path.For eclipe go to Windows - Preferences - Ant Home and add an external jar.  -->
+    <target name="test" description="Run JUnit" depends="compile">
+        <delete dir="${doc.dir}\junit"/>        
+        <mkdir dir="${doc.dir}\junit"/>
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath>
+                <pathelement location="${build.dir}/classes"/>
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+            <formatter type="brief"/>
+            <batchtest todir="${doc.dir}\junit">
+                <fileset dir="${tests.dir}">
+                    <include name="**/*TestSuite*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+
+</project>

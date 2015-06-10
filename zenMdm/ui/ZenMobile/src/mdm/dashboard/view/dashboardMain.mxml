@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="mdm.common.view.*">
+	
+	<fx:Declarations>
+		
+		
+		
+	</fx:Declarations>
+	
+	<fx:Script>
+
+		<![CDATA[
+			
+			import mx.collections.ArrayCollection;
+			
+			
+			
+			[Bindable]
+			
+			public var deviceTypeData:ArrayCollection = new ArrayCollection([
+				
+				{deviceType:"Android", Amount:1500},
+				
+				{deviceType:"Iphone", Amount:1400},
+				
+				{deviceType:"Unknown", Amount:3000}
+				
+			]);
+			
+			
+			
+			[Bindable]
+			
+			public var byodSummaryData:ArrayCollection = new ArrayCollection([
+				
+				{ownedBy:"Corporate", Amount:1500},
+				
+				{ownedBy:"Personal", Amount:1400},
+				
+				{ownedBy:"Not specified", Amount:600}
+				
+			]);                                           
+			
+			
+			
+			[Bindable]
+			
+			public var enrollStatusData:ArrayCollection = new ArrayCollection([
+				
+				{enrollStatus:"Enrolled", Amount:300},
+				
+				{enrollStatus:"Yet to Enroll", Amount:200},
+				
+				{enrollStatus:"Profile Removed", Amount:30}
+				
+			]);                                           
+			
+			
+			
+			[Bindable]
+			
+			public var scanStatusData:ArrayCollection = new ArrayCollection([
+				
+				{scanStatus:"Completed", Amount:255},
+				
+				{scanStatus:"Failed", Amount:455},
+				
+				{scanStatus:"Not Done", Amount:100}
+				
+			]);                                                                                           
+			
+		]]>
+		
+	</fx:Script>
+	
+	
+	
+	
+	
+	<mx:HBox width="90%" height="45%">
+		
+		<view:barChart id="bar1" width="50%" height="100%" chartTitle="Device Type" chartData="{deviceTypeData}" chartCategoryField="deviceType" chartYField="deviceType" chartXField="Amount" chartDisplayName="Device Type"/>
+		
+		<view:barChart id="bar2" width="50%" height="100%" chartTitle="BYOD Summary" chartData="{byodSummaryData}" chartCategoryField="ownedBy" chartYField="ownedBy" chartXField="Amount" chartDisplayName="Owned By"/>
+		
+	</mx:HBox>
+	
+	<mx:HBox width="90%" height="45%">
+		
+		<view:barChart id="bar3" width="50%" height="100%" chartTitle="Enrollment Status" chartData="{enrollStatusData}" chartCategoryField="enrollStatus" chartYField="enrollStatus" chartXField="Amount" chartDisplayName="Enrollment Status"/>
+		
+		<view:pieChart id="bar4" width="50%" height="100%" chartTitle="Scan Status" chartData="{scanStatusData}" chartField="Amount" chartNameField="scanStatus"/>
+		
+	</mx:HBox>       
+	
+</mx:VBox>

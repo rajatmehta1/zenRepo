@@ -1,0 +1,41 @@
+<resources>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello">Hello World, DevicePolicyDemoActivity!</string>
+
+    <string name="app_name">ZenMobile Agent</string>
+
+    <string name="enable_device_admin">Enable Device Admin</string>
+
+    <string name="lock_device">Lock Device</string>
+
+    <string name="reset_device">Reset Device</string>
+
+    <string name="device_admin_enabled">Device Admin Enabled</string>
+
+    <string name="device_admin_disabled">Device Admin Disabled</string>
+
+    <string name="app_installed">App Installed</string>
+
+    
+
+    <string-array name="zenmobile_options">
+
+        <item>Unit Testing</item>
+
+        <item>General Info</item>
+
+        <item>Device Info</item>
+
+        <item>Device Memory Info</item>
+
+        <item>Data Usage Stats</item>
+
+        <item>Enrol Device with Zen MDM</item>        
+
+    </string-array>
+
+</resources>

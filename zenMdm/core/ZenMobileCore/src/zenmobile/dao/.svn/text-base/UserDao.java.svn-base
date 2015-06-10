@@ -1,0 +1,26 @@
+package houston.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Select;
+
+import houston.beans.vo.LoginVO;
+import houston.beans.vo.RoleVO;
+import houston.beans.vo.UserVO;
+
+public interface UserDao {
+  /* @Select("SELECT * FROM user") */
+   public List<UserVO> fetchAllUsers() throws SQLException;
+   
+   public UserVO addUser(UserVO userVO) throws SQLException;
+   
+   public UserVO updateUser(UserVO userVO) throws SQLException;
+   
+   public boolean deleteUser(int userId) throws SQLException;
+   
+   public boolean loginUser(LoginVO loginVO) throws SQLException;
+   
+   public List<RoleVO> fetchAllRoles() throws SQLException;
+   
+}

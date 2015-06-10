@@ -1,0 +1,9 @@
+package houston.helper.parsers;
+
+/*
+ *  Class to parse the CSV file of users data.
+ *  
+ */
+public class CSVParser {
+
+}

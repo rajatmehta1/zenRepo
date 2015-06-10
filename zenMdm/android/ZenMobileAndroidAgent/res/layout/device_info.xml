@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <TableLayout android:id="@+id/tableLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="5dp" android:background="#B02B2C">
+
+            <TextView android:text="Device Info" android:textSize="30dp" />
+
+        </TableRow>
+
+        <TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:padding="5dp" android:layout_height="wrap_content">
+
+            <View android:layout_width="fill_parent" android:layout_height="1dip" />
+
+        </TableRow>        
+
+        <TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:padding="5dp" android:layout_height="wrap_content">
+
+            <TextView android:text="Name" android:textSize="20dp"/>
+
+            <TextView android:id="@+id/deviceName"/>
+
+        </TableRow>
+
+        <TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:padding="5dp" android:layout_height="wrap_content">
+
+            <TextView android:text="OS" android:textSize="20dp"/>
+
+            <TextView android:id="@+id/deviceOS"/>        
+
+        </TableRow>
+
+        <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:padding="5dp" android:layout_height="wrap_content">
+
+            <TextView android:text="Carrier" android:textSize="20dp"/>
+
+            <TextView android:id="@+id/deviceCarrier"/>                
+
+        </TableRow>
+
+        <TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content" android:padding="5dp" android:layout_height="wrap_content">
+
+            <TextView android:text="Model" android:textSize="20dp"/>
+
+            <TextView android:id="@+id/deviceModel"/>                
+
+        </TableRow>
+
+        <TableRow android:id="@+id/tableRow5" android:layout_width="wrap_content" android:padding="5dp" android:layout_height="wrap_content">
+
+            <TextView android:text="User" android:textSize="20dp"/>
+
+            <TextView android:id="@+id/deviceUser"/>               
+
+        </TableRow>
+
+        <TableRow android:id="@+id/tableRow6" android:layout_width="wrap_content" android:padding="5dp" android:layout_height="fill_parent" android:gravity="bottom">
+
+            <Button android:id="@+id/backButton" android:text="Back"/>              
+
+        </TableRow>
+
+    </TableLayout>

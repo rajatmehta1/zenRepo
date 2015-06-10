@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="45" backgroundColor="#73880A" paddingLeft="10" paddingBottom="10" cornerRadius="4">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<mx:HBox paddingTop="10" height="100%">                                     
+		
+		<s:Label id="logo" text="ZenMobile" fontSize="25" color="white" fontWeight="bold" fontFamily="arial"/>
+		
+		<mx:Spacer width="20"/>
+		
+		<s:Label text="Demo" fontSize="16" fontWeight="bold" color="white"/>
+		
+	</mx:HBox>
+	
+	<mx:VRule height="85%" width="1.5"/>
+	
+	<mx:HBox paddingTop="10" height="100%">
+		
+		<s:Label text="Local App Store" fontSize="16"  color="white"/>                
+		
+	</mx:HBox>
+	
+	
+	
+	
+	
+	<mx:Spacer width="100%"/>
+	
+	<mx:VBox height="100%" verticalAlign="top" paddingTop="3">
+		
+		<mx:HBox width="100%" fontSize="12" color="white" verticalAlign="top">
+			
+			<s:Label text="(UserName)" />                 
+			
+			<s:Label text="|" />
+			
+			<s:Label text="Downloads"/>
+			
+			<s:Label text="|" />
+			
+			<s:Label text="Account"/>
+			
+			<s:Label text="|" />
+			
+			<s:Label text="Community"/>   
+			
+			<s:Label text="|" />
+			
+			<s:Label text="Logout"/>             
+			
+			<mx:Spacer width="10"/>                                                                            
+			
+		</mx:HBox>
+		
+	</mx:VBox>
+	
+</mx:HBox>
+
+

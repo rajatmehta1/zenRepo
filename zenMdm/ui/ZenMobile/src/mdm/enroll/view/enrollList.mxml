@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<fx:Script>
+
+		<![CDATA[
+			
+			import mx.controls.Alert;
+			
+			import mx.managers.PopUpManager;
+			
+			public function openEnrollDevice():void {
+				
+				var devPop:enrollDevicePopup = PopUpManager.createPopUp(this, enrollDevicePopup, false) as enrollDevicePopup;
+				
+				PopUpManager.centerPopUp(devPop);
+				
+			}
+			
+			
+			
+			public function openBulkEnrollDevice():void {
+				
+				var devPop:enrollDevicePopup = PopUpManager.createPopUp(this, enrollDevicePopup, false) as enrollDevicePopup;
+				
+				PopUpManager.centerPopUp(devPop);
+				
+			}                                              
+			
+			
+			
+			public function removeDevice():void {
+				
+				Alert.show("Device will be removed");
+				
+			}                                              
+			
+		]]>
+		
+	</fx:Script>
+	
+	<mx:HBox width="100%" verticalAlign="middle" horizontalAlign="left">
+		
+		<mx:Button id="enrollDevice" label="(+) Enroll Device" click="openEnrollDevice()" paddingRight="10" fontSize="11"/>
+		
+		<mx:Button id="bulkEnrollDevice" label="(+) Bulk Enroll Device" click="openBulkEnrollDevice()" paddingRight="10" fontSize="11"/>
+		
+		<mx:Button id="removeDeviceID" label="(X) Remove Device" click="removeDevice()" paddingRight="10" fontSize="11"/>
+		
+		<mx:VRule height="{removeDeviceID.height + 4}" width="2"/>
+		
+		<mx:TextInput id="srchDevice" text="(Search Device)"/>
+		
+		<mx:Button id="srchGo" label="Go" />                  
+		
+	</mx:HBox>
+	
+	
+	
+	<mx:DataGrid id="appListGrid" width="100%" height="100%" headerStyleName="basicGridHdrStyle" styleName="basicGridStyle" >
+		
+		<mx:columns>
+			
+			<mx:DataGridColumn headerText="User Name"/>
+			
+			<mx:DataGridColumn headerText="Email"/>
+			
+			<mx:DataGridColumn headerText="Device Name"/>
+			
+			<mx:DataGridColumn headerText="Request Date"/>
+			
+			<mx:DataGridColumn headerText="Enrollment Date"/>
+			
+			<mx:DataGridColumn headerText="Owned By"/>
+			
+			<mx:DataGridColumn headerText="Status"/>
+			
+			<mx:DataGridColumn headerText="Comments"/>
+			
+			<mx:DataGridColumn headerText="Actions"/>
+			
+		</mx:columns>
+		
+	</mx:DataGrid>
+	
+	<mx:Spacer height="10"/>
+	
+</mx:VBox>

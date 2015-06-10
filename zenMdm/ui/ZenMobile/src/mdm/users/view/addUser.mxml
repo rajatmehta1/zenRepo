@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace view "mdm.users.view.*";
+		.userHeadingStyle {
+			font-weight : bold;
+			font-family : Arial;
+			font-size : 12;
+		}
+		.userTextStyle {
+			font-weight : normal;
+			font-family : Arial;
+			font-size : 12;
+		}           
+	</fx:Style>
+	<fx:Script>
+		<![CDATA[
+			public function callCancel():void {
+				dispatchEvent(new Event("CancelPopupEvent"));
+			}
+		]]>
+	</fx:Script>
+	<fx:Metadata>
+		[Event(name="CancelPopupEvent", type="flash.events.Event")]
+	</fx:Metadata>
+	<!-- used when ldap is not used -->
+	<mx:Grid width="80%">
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right" styleName="userHeadingStyle">
+				<mx:Label text="First Name"/>
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="left" styleName="userTextStyle">
+				<mx:TextInput id="firstName" text="" width="100%"/>
+			</mx:GridItem>                
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right" styleName="userHeadingStyle">
+				<mx:Label text="Last Name"/>
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="left" styleName="userTextStyle">
+				<mx:TextInput id="lastName" text="" width="100%"/>
+			</mx:GridItem>                
+		</mx:GridRow>
+		
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right" styleName="userHeadingStyle">
+				<mx:Label text="Phone"/>
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="left" styleName="userTextStyle">
+				<mx:TextInput id="phone" text="" width="100%"/>
+			</mx:GridItem>                
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right" styleName="userHeadingStyle">
+				<mx:Label text="Department"/>
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="left" styleName="userTextStyle">
+				<mx:TextInput id="dept" text="" width="100%"/>
+			</mx:GridItem>                
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right" styleName="userHeadingStyle">
+				<mx:Label text="Email"/>
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="left" styleName="userTextStyle">
+				<mx:TextInput id="email" text="" width="100%"/>
+			</mx:GridItem>                
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right" styleName="userHeadingStyle">
+				<mx:Label text="Password"/>
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="left" styleName="userTextStyle">
+				<mx:TextInput id="password" text="" width="100%"/>
+			</mx:GridItem>                
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right" styleName="userHeadingStyle">
+				<mx:Label text="Confirm"/> 
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="left" styleName="userTextStyle">
+				<mx:TextInput id="confirm" text="" width="100%"/>
+			</mx:GridItem>                
+		</mx:GridRow>
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right">
+				
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="right">
+				
+			</mx:GridItem>                
+		</mx:GridRow>     
+		<mx:GridRow>
+			<mx:GridItem horizontalAlign="right">
+				
+			</mx:GridItem>
+			<mx:GridItem horizontalAlign="right">
+				<mx:Button id="cancelBtn" label="Cancel" click="callCancel()"/>
+				<mx:Button id="submitBtn" label="Submit"/>
+			</mx:GridItem>                
+		</mx:GridRow>           
+	</mx:Grid>  
+	
+</mx:VBox>

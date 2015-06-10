@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<mx:HBox width="100%" height="100%" verticalAlign="middle">
+		
+		<mx:VBox width="60%" height="100%">             
+			
+			<mx:Grid width="100%">
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Device Type"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="Android Phone"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                       
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Device Name"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="Rajat's Android Phone"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Status"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%">
+						
+						<mx:Label text=""/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Last Refresh Date"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%">
+						
+						<mx:Label text="22nd Jan 2013"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                       
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Phone Number"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="848-838-9393"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                 
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Platform"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="Apple"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                 
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Model"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="iPad"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                 
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Operating System"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="5.1.1"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                 
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Owner"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="Rajat"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                 
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Category"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="Tablets"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                 
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Serial Number"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="7823783-23893-23923923-2333"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>                 
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="UDID"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="2CDDD6JJJDHHHH767676HHHHH%%%%djdjd"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Asset Number"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="2C262378239abc666HHGJjjjdg"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Power Status"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="Device on AC Power"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text="Storage Capacity"/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text="16gb"/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text=""/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text=""/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text=""/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text=""/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>
+				
+				<mx:GridRow width="100%">
+					
+					<mx:GridItem width="50%" horizontalAlign="right" fontWeight="bold">
+						
+						<mx:Label text=""/>
+						
+					</mx:GridItem>
+					
+					<mx:GridItem width="50%" horizontalAlign="left">
+						
+						<mx:Label text=""/>
+						
+					</mx:GridItem>                
+					
+				</mx:GridRow>           
+				
+			</mx:Grid>
+			
+		</mx:VBox>
+		
+	</mx:HBox>
+	
+</mx:VBox>

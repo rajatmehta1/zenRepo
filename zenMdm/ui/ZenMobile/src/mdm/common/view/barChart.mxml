@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" styleName="divGridStyle" cornerRadius="5" xmlns:view="mdm.apps.view.*">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<fx:Style>
+
+		@namespace s "library://ns.adobe.com/flex/spark";
+		
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		
+		.divGridStyle {
+			
+			color: #3E3E3E;
+			
+			font-family: sans-serif;
+			
+			background-color : #ffffff;
+			
+			border-color : #999999;
+			
+			border-thickness : 1;      
+			
+			border-style : solid;
+			
+			padding-top : 5;
+			
+			padding-bottom : 5;
+			
+		}
+		
+		.titleStyle {
+			
+			padding-top : 4;
+			
+			padding-left : 10;
+			
+			font-size : 20;
+			
+		}
+		
+		.hruleStyle {
+			
+			background-color : #999999;
+			
+		}
+		
+		.basicGridStyle {
+			
+			vertical-grid-lines: true;
+			
+			vertical-grid-line-color : #999999;
+			
+			border-style: solid;
+			
+			alternating-item-colors: #F4FBFF, #FFFFFF;
+			
+			border-color : #999999;
+			
+		}
+		
+		.basicGridHdrStyle {
+			
+			padding-left : 5;
+			
+			font-family: sans-serif;
+			
+			font-weight : normal;
+			
+			font-size : 14;
+			
+			color : #808080;
+			
+			header-height : 50;
+			
+			vertical-align : middle;
+			
+		}                              
+		
+	</fx:Style>
+	
+	<fx:Script>
+
+		<![CDATA[
+			
+			import mx.collections.ArrayCollection;
+			
+			import mx.graphics.SolidColor;
+			
+			[Bindable]
+			
+			public var chartTitle:String;
+			
+			
+			
+			[Bindable]
+			
+			public var chartField:String;
+			
+			
+			
+			[Bindable]
+			
+			public var chartNameField:String;
+			
+			
+			
+			[Bindable]
+			
+			public var chartHeight:uint = 90;
+			
+			
+			
+			[Bindable]
+			
+			public var chartWidth:uint = 90;
+			
+			
+			
+			[Bindable]
+			
+			public var chartData:ArrayCollection;
+			
+			
+			
+			[Bindable]
+			
+			public var chartCategoryField:String;
+			
+			
+			
+			[Bindable]
+			
+			public var chartDisplayName:String;
+			
+			
+			
+			[Bindable]
+			
+			public var chartXField:String;
+			
+			
+			
+			[Bindable]
+			
+			public var chartYField:String;     
+			
+			
+			
+			[Bindable]
+			
+			private var coolColorsArray:Array = new Array(
+				
+				new SolidColor(0xD15600, .8), 
+				
+				new SolidColor(0x73880A, .8), 
+				
+				new SolidColor(0x356AA0, .8)
+				
+			);                                             
+			
+			
+			
+		]]>
+		
+	</fx:Script>
+	
+	<fx:Binding source="chartWidth" destination="barChartID.percentWidth"/>
+	
+	<fx:Binding source="chartHeight" destination="barChartID.percentHeight"/>
+	
+	
+	
+	<mx:HBox id="title" width="100%" styleName="titleStyle">                      
+		
+		<mx:Label id="gridLabel" text="{chartTitle}"/>
+		
+		<mx:Spacer height="100%"/>                     
+		
+	</mx:HBox>
+	
+	<mx:HRule width="100%" height="1"  styleName="hruleStyle"/>
+	
+	<mx:VBox width="100%" height="100%">
+		
+		
+		
+		<mx:BarChart id="barChartID" dataProvider="{chartData}" showDataTips="true">
+			
+			<mx:verticalAxis>
+				
+				<mx:CategoryAxis 
+					
+					dataProvider="{chartData}" 
+					
+					categoryField="{chartCategoryField}"
+					
+					/>
+				
+			</mx:verticalAxis>
+			
+			<mx:series>
+				
+				<mx:BarSeries 
+					
+					yField="{chartYField}" 
+					
+					xField="{chartXField}" 
+					
+					displayName="{chartDisplayName}" fills="{coolColorsArray}"
+					
+					/>
+				
+			</mx:series>
+			
+		</mx:BarChart>
+		
+		<mx:Legend dataProvider="{barChartID}"/>
+		
+		
+		
+		
+		
+	</mx:VBox>
+	
+	
+	
+</mx:VBox>

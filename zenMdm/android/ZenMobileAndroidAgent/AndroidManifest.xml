@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="zenmobile.agent.activity"
+      android:versionCode="1"
+      android:versionName="1.0">
+   <uses-sdk android:minSdkVersion="8" />
+ 
+    <uses-permission android:name="android.permission.INTERNET" /> 
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+     
+
+    <application android:label="@string/app_name">
+
+        <activity android:name=".MainActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+
+
+        <activity android:name=".AdminActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity> 
+
+                
+
+        <activity android:name=".DeviceInfoActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity> 
+
+
+
+        <activity android:name=".DeviceMemoryActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+
+
+        <activity android:name=".EnrolActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+                                                
+
+        <activity android:name=".GeneralInfoActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity> 
+
+
+
+        <activity android:name=".ShowMainScreenActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+
+
+        <activity android:name=".TestActivity"
+
+                  android:label="@string/app_name">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+                
+
+        <receiver
+
+            android:name="zenmobile.agent.receiver.ZMDeviceAdminReceiver"
+
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+
+            <intent-filter>
+
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+
+            </intent-filter>
+
+
+
+            <!-- This is required this receiver to become device admin component. -->
+
+            <meta-data
+
+                android:name="android.app.device_admin"
+
+                android:resource="@xml/default_admin_policy" />
+
+        </receiver>   
+   </application>     
+</manifest>
+

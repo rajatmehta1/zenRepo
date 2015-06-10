@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:HBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" horizontalAlign="center" verticalAlign="top" paddingTop="50">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<fx:Script>
+
+		<![CDATA[
+			
+			public function callSubmit():void {
+				
+				dispatchEvent(new Event("SubmitEvent"));
+				
+			}
+			
+		]]>
+		
+	</fx:Script>
+	
+	<fx:Metadata>
+		
+		[Event(name="SubmitEvent", type="flash.events.Event")]
+		
+	</fx:Metadata>
+	
+	<mx:Grid width="100%">
+		
+		<mx:GridRow width="100%" horizontalAlign="center">
+			
+			<mx:GridItem id="userNameRow" horizontalAlign="right" width="50%">
+				
+				<mx:Label id="userNameLbl" text="User Name" fontWeight="bold"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem id="userNameTextRow" horizontalAlign="left" width="50%">
+				
+				<mx:TextInput id="userName" text=""/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		<mx:GridRow width="100%" horizontalAlign="center" >
+			
+			<mx:GridItem  horizontalAlign="right" width="50%">
+				
+				<mx:Label id="pwdLbl" text="Password" fontWeight="bold"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left" width="50%">
+				
+				<mx:TextInput id="pwd" text=""/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		<mx:GridRow width="100%" horizontalAlign="center">
+			
+			<mx:GridItem  horizontalAlign="right" width="50%">
+				
+				<mx:Spacer/>
+				
+			</mx:GridItem>                                               
+			
+			<mx:GridItem horizontalAlign="left" width="50%">
+				
+				<mx:Button id="cancel" label="Cancel"/>
+				
+				<mx:Button id="submit" label="Submit" click="callSubmit()"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>                                
+		
+	</mx:Grid>
+	
+</mx:HBox>

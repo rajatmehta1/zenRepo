@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   
+			   minWidth="955" minHeight="600" 
+			   
+			   xmlns:view="mdm.common.view.*" 
+			   
+			   xmlns:view1="mdm.apps.view.*" 
+			   
+			   xmlns:ria="http://ria.msflexlib.ms.com" 
+			   
+			   xmlns:view2="mdm.devices.view.*" 
+			   
+			   xmlns:view3="mdm.users.view.*" 
+			   
+			   xmlns:view4="mdm.dashboard.view.*" 
+			   
+			   xmlns:view5="mdm.enroll.view.*" xmlns:parsley="http://www.spicefactory.org/parsley" 
+			   
+			   xmlns:devicedetails="mdm.devices.view.devicedetails.*" xmlns:singleuser="mdm.singleuser.*" creationComplete="populateData()">
+	
+	<s:layout>
+		
+		<s:VerticalLayout horizontalAlign="center" verticalAlign="top"/>
+		
+	</s:layout>
+	
+	
+	
+	<fx:Declarations>
+         
+		
+		<mx:WipeLeft id="wipeLeft" duration="1000"/>
+		
+		<mx:WipeUp id="wipeUp" duration="1000"/>
+		
+	</fx:Declarations>
+	
+	
+	
+	<fx:Metadata>
+		
+		[Event(name="LoginEvent", type="mdm.common.events.LoginEvent")]
+		
+		[ManagedEvents("LoginEvent")]       
+		
+	</fx:Metadata>
+	
+	
+	
+	<fx:Script>
+
+		<![CDATA[
+			import mdm.devices.events.ShowDeviceDetailEvent;
+			import mdm.devices.vo.DeviceVo;
+			import mdm.utils.Utility;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.core.Container;
+			
+			
+			
+	
+			
+			
+			
+			public var lastOpenedChildContainer:Container = null;
+			
+			
+			
+            
+			
+			
+			
+			[Bindable]
+			
+			public var tileData:ArrayCollection;
+			
+			
+			
+			public function onSubmit():void {
+				
+
+				
+			}
+			
+			
+			
+			public function populateData():void {
+				
+				tileData = new ArrayCollection();
+				
+				var dvo:DeviceVo = new DeviceVo();
+				
+				dvo.deviceType = "iPhone 5";
+				
+				dvo.name = "Rajat's iphone";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iPhone 5";
+				
+				dvo.name = "Rajat's iphone";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);				
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "android";
+				
+				dvo.name = "Rajat's Android";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iPad";
+				
+				dvo.name = "Harpreet's iPad";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iPad";
+				
+				dvo.name = "Harpreet's iPad";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iPad";
+				
+				dvo.name = "Harpreet's iPad";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iPad";
+				
+				dvo.name = "Harpreet's iPad";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iPad";
+				
+				dvo.name = "Harpreet's iPad";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iPad";
+				
+				dvo.name = "Harpreet's iPad";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);				
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "android";
+				
+				dvo.name = "Harpreet's iPad";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);
+				
+				
+				
+				dvo = new DeviceVo();
+				
+				dvo.deviceType = "iphone 4";
+				
+				dvo.name = "Old Iphone";
+				
+				dvo.imgUrl = Utility.imgUrl(dvo.deviceType);
+				
+				tileData.addItem(dvo);                          
+				
+				
+				
+			}
+			
+			
+			
+			private function itemClickMethod(e:Event):void {
+				
+				//                      var dvo:DeviceVo = e.currentTarget.selectedItem as DeviceVo;
+				
+				//                      Alert.show(" --> " + dvo.deviceType);
+				
+				container2.includeInLayout = true;
+				
+				container2.visible = true;
+				
+				container1.visible = false;
+				
+				container1.includeInLayout = false;
+				
+				listView.selectedItem = tileListView.selectedItem;
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+		]]>
+		
+	</fx:Script>
+	
+	
+	
+	<fx:Style>
+
+		Application {
+			
+			padding-top : 0;
+			
+		}
+		
+		.bgStyle{
+			
+			background-color: #ffffff;
+			
+		}
+		
+		.leftNavStyle {
+			
+			border-color: #ffffff;
+			
+			border-thickness : 1;
+			
+			corner-radius : 5;
+			
+			drop-shadow-enabled: true;
+			
+			horizontalAlign: center;
+			
+			fontFamily: Arial;
+			
+			fontSize: 15;
+			
+			color: #808080;                           
+			
+		}
+		
+		.menuOptionStyle {
+			
+			paddingLeft: 2;
+			
+			paddingRight: 2;
+			
+			horizontalAlign: center;
+			
+			backgroundColor: #ffffff;
+			
+			vertical-align : middle;
+			
+			corner-radius : 7;
+			
+			padding-bottom : 0;
+			
+			padding-top: 10;
+			
+		}
+		
+		
+		
+		.menuOptionChoicesStyle {
+			
+			fontFamily: Arial;
+			
+			fontSize: 11;
+			
+			color: #356AA0;         
+			
+			background-color : #ffffff;
+			
+			vertical-align : top;
+			
+			horizontal-align : center;
+			
+			border-sides : left,right,bottom;
+			
+			border-thickness : 4;
+			
+			border-color : #73880A;
+			
+			border-style : solid;
+			
+			padding-top : 0;
+			
+		}           
+		
+		
+		
+	</fx:Style>
+	
+	<view:topBar id="topBarID"/>
+	
+	   
+	
+	<mx:VBox id="mainContentContainer" width="100%" height="100%" horizontalAlign="center" verticalAlign="middle" includeInLayout="true" visible="true" verticalScrollPolicy="on">         
+		
+		<mx:VBox id="container1" width="100%" height="100%" includeInLayout="true" visible="true" horizontalAlign="center" verticalAlign="middle" hideEffect="wipeLeft">
+			
+			<mx:Spacer height="10"/>
+			
+			<mx:HBox width="40%" paddingBottom="10" paddingLeft="10" paddingRight="10" paddingTop="10" backgroundColor="0xD15600" color="white" horizontalAlign="center" cornerRadius="8">
+				
+				<mx:Label text="Choose Your Device" fontSize="25"/>
+				
+			</mx:HBox>  
+			
+			<mx:Spacer height="30"/>
+			
+			<mx:TileList id="tileListView" dataProvider="{tileData}" height="90%" borderVisible="false" itemClick="itemClickMethod(event)" verticalScrollPolicy="off">
+				
+				<mx:itemRenderer>
+					
+					<fx:Component>
+						
+						<mx:VBox verticalAlign="top" horizontalAlign="center">
+							
+							<mx:Image width="200" height="200" source="{data.imgUrl}"/>
+							
+							<mx:Text text="{data.name}" width="200"/>
+							
+							<mx:Spacer height="10"/>
+							
+						</mx:VBox>
+						
+					</fx:Component>
+					
+				</mx:itemRenderer>
+				
+			</mx:TileList>
+			
+		</mx:VBox>
+		
+		
+		
+		<mx:HBox id="container2" width="100%" height="100%" horizontalAlign="left" verticalAlign="top" includeInLayout="false" visible="false" showEffect="wipeUp">
+			
+			<mx:List id="listView" width="200" height="100%" horizontalScrollPolicy="off" verticalScrollPolicy="auto" dataProvider="{tileData}">
+				
+				<mx:itemRenderer>
+					
+					<fx:Component>
+						
+						<mx:VBox verticalAlign="top" horizontalAlign="center" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+							
+							<mx:Image width="100" height="100" source="{data.imgUrl}"/>
+							
+							<mx:Text text="{data.name}" width="200"/>
+							
+							<mx:Spacer height="10"/>
+							
+						</mx:VBox>
+						
+					</fx:Component>
+					
+				</mx:itemRenderer>
+				
+			</mx:List> 
+			
+			<mx:Spacer width="20"/>
+			
+			<mx:HBox id="mainContent" width="100%" height="100%">
+				
+				<mx:TabNavigator id="deviceContent" width="80%" height="100%">
+					
+					<singleuser:deviceDetails id="deviceDetails" label="Details"/>
+					
+					<devicedetails:deviceAppsTab2 label="Apps"/>
+					
+					<devicedetails:deviceLocationTab5 label="Location"/>
+					
+				</mx:TabNavigator>
+				
+				<mx:Spacer width="20"/>
+				
+				<mx:TabNavigator id="deviceActions" width="20%" height="100%">
+					
+					<mx:VBox width="100%" height="100%" label="Actions" horizontalAlign="center">
+						
+						<mx:Button width="100" height="60" label="Wipe Data"/>
+						
+						<mx:Button width="100" height="60" label="Lock Device"/>
+						
+						<mx:Button width="100" height="60" label="Wipe Enterprise Data"/>
+						
+					</mx:VBox>
+					
+					<devicedetails:deviceAppsTab2 label="Log"/>
+					
+				</mx:TabNavigator>                                                      
+				
+			</mx:HBox>
+			
+		</mx:HBox>          
+		
+	</mx:VBox>
+	
+	
+	
+</s:Application>

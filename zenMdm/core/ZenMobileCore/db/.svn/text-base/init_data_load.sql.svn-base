@@ -1,0 +1,18 @@
+-- Initial Data Load
+
+-- Tenant
+insert into tenant(name,description,schema_name,created_by,created_on,updated_by,updated_on) values('Test Tenant','Test Tenant Desc','houstondb','system',curDate(),'system',CURDATE());
+
+-- users - Developer / Admin / End User
+insert into roles(name,description,created_by,created_on,updated_by,updated_on) values('Admin','Admin User','system',curDate(),'system',CURDATE());
+
+insert into roles(name,description,created_by,created_on,updated_by,updated_on) values('Developer','Developer','system',curDate(),'system',CURDATE());
+
+insert into roles(name,description,created_by,created_on,updated_by,updated_on) values('EndUser','Normal End User','system',curDate(),'system',CURDATE());
+
+-- using tenant id as 1
+insert into user_group(tenant_id,group_name,created_by,created_on,updated_by,updated_on) values(1,'Marketing','system',curDate(),'system',CURDATE());
+insert into user_group(tenant_id,group_name,created_by,created_on,updated_by,updated_on) values(1,'Legal and Compliance','system',curDate(),'system',CURDATE());
+insert into user_group(tenant_id,group_name,created_by,created_on,updated_by,updated_on) values(1,'HR','system',curDate(),'system',CURDATE());
+
+

@@ -1,0 +1,28 @@
+9
+
+dir
+4
+svn+ssh://root@www.venkyonline.com/var/svn/repository/houston/HoustonPrj/conf
+svn+ssh://root@www.venkyonline.com/var/svn/repository/houston
+
+
+
+2012-01-19T20:57:12.872330Z
+2
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+54fee5c5-f109-46c9-8b51-9d5529962c58
+

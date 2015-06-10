@@ -1,0 +1,5 @@
+package houston.utils;
+
+public class Messages {
+   public static final String STANDARD_DATABASE_ERR_MSG = "The application is experience some problem. Please try after some time.";
+}

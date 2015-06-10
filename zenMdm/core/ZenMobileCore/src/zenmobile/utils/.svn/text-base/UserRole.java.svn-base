@@ -1,0 +1,5 @@
+package houston.utils;
+
+public enum UserRole {
+   ADMIN,DEVELOPER,END_USER
+}

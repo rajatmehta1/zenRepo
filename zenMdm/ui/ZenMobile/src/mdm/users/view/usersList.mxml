@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" initialize="test()" xmlns:view="mdm.users.view.*">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import mdm.users.vo.UserVo;
+			
+			import mx.collections.ArrayCollection;
+			import mx.managers.PopUpManager;
+			[Bindable]
+			public var dummyData:ArrayCollection = new ArrayCollection();
+			
+			public function test():void {
+				var test:UserVo = new UserVo();
+				test.name = "user1";
+				test.email = "test@abcd.com";
+				test.phone = "1210-122-122";
+				test.userId = "rajat";
+				test.department = "Sales";
+				
+				dummyData.addItem(test);
+				
+				test = new UserVo();
+				test.name = "user2";
+				test.email = "test2@abcd.com";
+				test.phone = "7373-122-122";
+				test.userId = "rajat";
+				test.department = "Sales";    
+				dummyData.addItem(test);
+			}
+			
+			public function showUserDetail():void {
+				//                      dispatchEvent(new Event("UserDetailEvent"));
+				usersGrid.percentWidth = 50;
+				userDetail.includeInLayout = true;
+				userDetail.visible = true;
+			}
+			
+			public function showAddUser():void {
+				var userPop:addUserPopup = PopUpManager.createPopUp(this, addUserPopup, false) as addUserPopup;
+				PopUpManager.centerPopUp(userPop);
+			}
+		]]>
+	</fx:Script>
+	<fx:Metadata>
+		[Event(name="UserDetailEvent", type="flash.events.Event")]
+	</fx:Metadata>
+	
+	<mx:HBox width="100%">
+		<mx:Button id="addUser" label="(+) Add User" click="showAddUser()"/>
+		<mx:Button id="remUser" label="(-) Remove User"/>
+		<mx:Button id="userProfile" label="User Profile"/>
+		<mx:Button id="emailUser" label="E-mail User"/>
+	</mx:HBox>
+	
+	<mx:HBox width="100%">
+		<mx:Text id="searchUser" text="Search User"/>
+		<mx:Grid width="100%">
+			<mx:GridRow width="100%">
+				<mx:GridItem horizontalAlign="center">
+					<mx:Label id="userName" text="User Name"/>
+				</mx:GridItem>
+				<mx:GridItem horizontalAlign="center">
+					<mx:Label id="phoneNum" text="Phone Number"/>
+				</mx:GridItem>
+				<mx:GridItem horizontalAlign="center">
+					<mx:Label id="policySuite" text="Policy Suite"/>
+				</mx:GridItem>    
+				<mx:GridItem horizontalAlign="center">
+					<mx:Label id="devicePlt" text="Device Platform"/>
+				</mx:GridItem>
+				<mx:GridItem horizontalAlign="center">
+					<mx:Button id="goBtn" label="Go"/>
+				</mx:GridItem>                      
+			</mx:GridRow>
+			<mx:GridRow width="100%">
+				<mx:GridItem horizontalAlign="center">
+					<mx:TextInput id="userNameTxt" text=""/>
+				</mx:GridItem>
+				<mx:GridItem horizontalAlign="center">
+					<mx:TextInput id="phoneNumTxt" text=""/>
+				</mx:GridItem>
+				<mx:GridItem horizontalAlign="center">
+					<mx:ComboBox id="policyOptions"/>
+				</mx:GridItem>    
+				<mx:GridItem horizontalAlign="center">
+					<mx:ComboBox id="platformOptions"/>
+				</mx:GridItem>
+				<mx:GridItem horizontalAlign="center">
+					<mx:Spacer width="5"/>
+				</mx:GridItem>                      
+			</mx:GridRow>                 
+		</mx:Grid>
+	</mx:HBox>
+	
+	<mx:HBox width="100%" height="100%">
+		<mx:DataGrid id="usersGrid" width="100%" height="100%" dataProvider="{dummyData}"  click="showUserDetail()">
+			<mx:columns>
+				<mx:DataGridColumn dataField="name" headerText="Name"/> 
+				<mx:DataGridColumn dataField="email" headerText="Email"/> 
+				<mx:DataGridColumn dataField="phone" headerText="Phone"/> 
+				<mx:DataGridColumn dataField="department" headerText="Department"/> 
+				<mx:DataGridColumn dataField="devices" headerText="Devices"/> 
+			</mx:columns>
+		</mx:DataGrid>
+		<view:userDetail id="userDetail" width="50%" height="100%" includeInLayout="false" visible="false"/>       
+	</mx:HBox>
+</mx:VBox>

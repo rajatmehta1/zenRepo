@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%" paddingBottom="10" paddingTop="10" paddingLeft="10" paddingRight="10">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<fx:Style>
+
+		@namespace s "library://ns.adobe.com/flex/spark";
+		
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		
+		
+		
+		.basicGridStyle {
+			
+			vertical-grid-lines: true;
+			
+			vertical-grid-line-color : #999999;
+			
+			border-style: solid;
+			
+			alternating-item-colors: #F4FBFF, #FFFFFF;
+			
+			border-color : #999999;
+			
+		}
+		
+		.basicGridHdrStyle {
+			
+			padding-left : 5;
+			
+			font-family: sans-serif;
+			
+			font-weight : bold;
+			
+			font-size : 14;
+			
+			color : #7E838B;
+			
+			header-height : 50;
+			
+			vertical-align : middle;
+			
+		}
+		
+	</fx:Style>
+	
+	
+	
+	<mx:DataGrid id="appListGrid" width="100%" height="100%" headerStyleName="basicGridHdrStyle" styleName="basicGridStyle" >
+		
+		<mx:columns>
+			
+			<mx:DataGridColumn headerText="Name"/>
+			
+			<mx:DataGridColumn headerText="Description"/>
+			
+			<mx:DataGridColumn headerText="Version"/>
+			
+			<mx:DataGridColumn headerText="Type"/>
+			
+			<mx:DataGridColumn headerText="Categories"/>
+			
+			<mx:DataGridColumn headerText="Last Updated"/>
+			
+		</mx:columns>
+		
+	</mx:DataGrid>
+	
+	
+	
+	<mx:HBox width="100%" horizontalAlign="center" >
+		
+		<mx:Button label="Delete"/>
+		
+		<mx:Button label="Edit"/>
+		
+		<mx:Button label="Apply Policy"/>
+		
+	</mx:HBox>
+	
+</mx:VBox>

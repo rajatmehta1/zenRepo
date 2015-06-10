@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="zenmobile.dao.UserDao">
+
+  <cache />
+
+  <select id="fetchAllUsers" resultType="zenmobile.beans.vo.UserVO">
+    select * from user_details
+  </select>
+
+  <insert id="addUser" parameterType="zenmobile.beans.vo.UserVO">
+    insert into user_details(last_name,first_name,email,username,password,secret_question,secret_password,expiration_date,created_by,created_on,updated_by,updated_on) 
+    values(#{lastName},#{firstName},#{email},#{userName},#{password},#{secretQuestion},#{secretPassword},#{expirationDate},#{createdBy},#{createdOn},#{updatedBy},#{updatedOn})
+  </insert>
+  
+  <update id="updateUser" parameterType="zenmobile.beans.vo.UserVO">
+    update user_details set last_name = #{lastName},first_name = #{firstName},email = #{email},username = #{userName},password = #{password},secret_question = #{secretQuestion},secret_password = #{secretPassword},expiration_date = #{expirationDate},created_by = #{createdBy},created_on = #{createdOn},updated_by = #{updatedBy},updated_on = #{updatedOn} 
+  </update>
+  
+  <insert id="addUserRoles" parameterType="zenmobile.beans.vo.UserVO">
+    insert into user_roles(userid,roleid,created_by,created_on,updated_by,updated_on) 
+    values(#{userId},#{roleId},#{createdBy},#{createdOn},#{updatedBy},#{updatedOn})
+  </insert>
+  
+  <insert id="addUserGroups" parameterType="zenmobile.beans.vo.UserVO">
+    insert into users(userid,groupid,created_by,created_on,updated_by,updated_on) 
+    values(#{userId},#{groupId},#{createdBy},#{createdOn},#{updatedBy},#{updatedOn})
+  </insert>
+    
+  <delete id="deleteUser" parameterType="int">
+    delete from user_details where user_id = #{id}
+  </delete>
+  
+  <delete id="deleteUserRoles" parameterType="int">
+    delete from roles where userid = #{id}
+  </delete>  
+  
+  <delete id="deleteUserGrps" parameterType="int">
+    delete from users where userid = #{id}
+  </delete>  
+    
+  <select id="loginUser" resultType="int" parameterType="zenmobile.beans.vo.LoginVO">
+    select count(*) from user_details where username = #{userName} and password=#{password}
+  </select>
+
+  <select id="fetchAllRoles" resultType="zenmobile.beans.vo.RoleVO">
+    select * from roles
+  </select>
+        
+</mapper>

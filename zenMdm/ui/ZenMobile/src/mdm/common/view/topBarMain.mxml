@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 
+		 width="100%" height="40" backgroundColor="0xFF3300" paddingTop="10" paddingLeft="10" paddingBottom="10" cornerRadius="5">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	
+	
+	<mx:HBox >
+		
+		<s:Label id="logo" text="Morgan Stanley" fontSize="24" color="white" fontWeight="bold" fontFamily="arial"/>
+		
+		<mx:Spacer width="20"/>
+		
+		<mx:VRule height="30" width="2"/>
+		
+		<mx:Spacer width="20"/>
+		
+		<s:Label text="Flow" fontSize="18" fontWeight="bold" color="blue"/>
+		
+		<mx:Spacer width="100%"/>
+		
+		<mx:VBox verticalAlign="top" paddingTop="2">
+			
+			<mx:HBox fontSize="9" color="white" paddingRight="5">
+				
+				<mx:Label text="UserName"/>
+				
+				<mx:Label text="Settings"/>
+				
+				<mx:Label text="Preferences"/>
+				
+				<mx:Label text="Communication"/>
+				
+			</mx:HBox>
+			
+		</mx:VBox>
+		
+	</mx:HBox>
+	
+	<mx:HBox width="100%" paddingRight="10">
+		
+		<mx:Button label="HOME"/>
+		
+		<mx:Button label="APPS"/>
+		
+		<mx:Button label="USERS"/>
+		
+		<mx:Button label="DEVICES"/>
+		
+		<mx:Button label="POLICY"/>
+		
+		<mx:Button label="SETTINGS"/>
+		
+	</mx:HBox>
+	
+</mx:VBox>

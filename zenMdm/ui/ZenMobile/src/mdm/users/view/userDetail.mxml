@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:VBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:view="mdm.users.view.*" backgroundColor="#C3D9FF">
+	
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+	</fx:Declarations>
+	
+	<mx:Grid id="userDetailsGrid" width="100%" height="100%">
+		
+		<mx:GridRow width="100%">
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Name"/> 
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:Label text="Johny test"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		<mx:GridRow width="100%">
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Email"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:Label text="johnytest@abcd.com"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>
+		
+		<mx:GridRow width="100%">
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Designation"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:Label text="johnytest@abcd.com"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>                                
+		
+		<mx:GridRow width="100%">
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Department"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:Label text="johnytest@abcd.com"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>                                
+		
+		<mx:GridRow width="100%">
+			
+			<mx:GridItem horizontalAlign="right">
+				
+				<mx:Label text="Phone"/>
+				
+			</mx:GridItem>
+			
+			<mx:GridItem horizontalAlign="left">
+				
+				<mx:Label text="johnytest@abcd.com"/>
+				
+			</mx:GridItem>                                               
+			
+		</mx:GridRow>                                                                
+		
+	</mx:Grid>         
+	
+	<view:userDeviceList id="userDeviceList" width="100%"/>
+	
+	
+	
+</mx:VBox>
