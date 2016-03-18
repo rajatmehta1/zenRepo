@@ -4,7 +4,7 @@ Repository of my open source projects
 The following projects are currently checked in
 
 1. <strong>ZenMdm</strong> - . 
-   This is a Mobile Device Management opensource project. The first version of this project only deals with handling Android devices.
+   This is a Mobile Device Management opensource project (catering to BYOD). The first version of this project only deals with handling Android devices.
    Aim is to provide a solution where a device health can be continuously monitored and the user gets exclusive remote excess to monitor the 
    health of his android device.
    
