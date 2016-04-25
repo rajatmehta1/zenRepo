@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Chase Talk!</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_cancel">Cancel</string>
+    
+    <string name="from_acct">From Account : </string>
+    <string name="to_acct">To Credit Card : </string>
+    <string name="amt">Amount</string>
+    <string name="pay_bill_mesg">Pay your credit card bill.</string>
+    <string name="crd_num">**********1234</string>
+   
+    <string-array name="acct_types">
+        <item>Checkin</item>
+        <item>Savings</item>
+    </string-array>
+    
+</resources>
