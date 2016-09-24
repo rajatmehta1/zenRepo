@@ -1,0 +1,5 @@
+	TOI, drishyam : 4, Bajrangi Bhaijaan : 4, piku : 4,
+	HT, drishyam : 3.5, Bajrangi Bhaijaan : 2.5, piku : 3.5,
+	NDTV, drishyam : 3, Bajrangi Bhaijaan : 2.5, piku : 3.5,
+	harpreet, drishyam : 2, Bajrangi Bhaijaan : 4, piku : 3	
+	harpreet: drishyam : 2, Bajrangi Bhaijaan : 4, piku : 3
